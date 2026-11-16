@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Member Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Club Member Hub</h1>
+    <nav>
+      <a href="#survey">Feedback Survey</a>
+      <a href="#complaints">Private Complaints</a>
+      <a href="#chatbot">AI Assistant</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Section 1: Renewable Survey -->
+    <section id="survey" class="card">
+      <h2>1. Periodic Member Feedback</h2>
+      <p class="subtitle" id="survey-cycle-info">Current Cycle: Active</p>
+      
+      <form id="feedback-form">
+        <label for="member-name">Member Name / ID (Optional):</label>
+        <input type="text" id="member-name" placeholder="Leave blank to remain anonymous">
+
+        <label for="event-rating">How satisfied are you with recent club activities?</label>
+        <select id="event-rating" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="5">5 - Excellent</option>
+          <option value="4">4 - Good</option>
+          <option value="3">3 - Average</option>
+          <option value="2">2 - Needs Improvement</option>
+          <option value="1">1 - Poor</option>
+        </select>
+
+        <label for="survey-comments">Suggestions for upcoming events:</label>
+        <textarea id="survey-comments" rows="3" placeholder="Share your ideas..." required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+      <div id="survey-status" class="status-msg"></div>
+    </section>
+
+    <!-- Section 2: Individual Complaints -->
+    <section id="complaints" class="card">
+      <h2>2. Confidential Complaint Submission</h2>
+      <p class="subtitle">Direct, private channel to the club board.</p>
+
+      <form id="complaint-form">
+        <label for="complaint-category">Issue Category:</label>
+        <select id="complaint-category" required>
+          <option value="" disabled selected>Select category</option>
+          <option value="Facilities & Equipment">Facilities & Equipment</option>
+          <option value="Event Organization">Event Organization</option>
+          <option value="Member Conduct">Member Conduct</option>
+          <option value="Financial / Dues">Financial / Dues</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="complaint-subject">Subject:</label>
+        <input type="text" id="complaint-subject" placeholder="Brief summary of the issue" required>
+
+        <label for="complaint-details">Detailed Description:</label>
+        <textarea id="complaint-details" rows="4" placeholder="Provide relevant details, dates, and context..." required></textarea>
+
+        <button type="submit" class="btn-danger">File Complaint</button>
+      </form>
+      <div id="complaint-status" class="status-msg"></div>
+    </section>
+
+    <!-- Section 3: AI Chatbot -->
+    <section id="chatbot" class="card">
+      <h2>3. Club AI Support Assistant</h2>
+      <p class="subtitle">Instant answers regarding schedule, rules, and memberships.</p>
+
+      <div class="chat-window" id="chat-window">
+        <div class="chat-bubble bot">
+          Hello! I am your Club AI assistant. Ask me about meeting schedules, membership perks, dues, or guidelines.
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="Ask a question..." required>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
